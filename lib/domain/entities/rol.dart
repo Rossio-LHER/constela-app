@@ -1,10 +1,11 @@
 /// Enumeración de roles de héroes en CONSTELA
 enum Rol {
-  guardianDelEnfoque,      // Tanque
-  especialistaAcademico,   // Mago
-  soporteMotivacional;     // Soporte
+  guardianDelEnfoque,
+  especialistaAcademico,
+  soporteMotivacional,
+}
 
-  /// Retorna el nombre en español
+extension RolExtension on Rol {
   String get nombreEspanol {
     switch (this) {
       case Rol.guardianDelEnfoque:
@@ -16,7 +17,6 @@ enum Rol {
     }
   }
 
-  /// Retorna la descripción del rol
   String get descripcion {
     switch (this) {
       case Rol.guardianDelEnfoque:
@@ -25,6 +25,26 @@ enum Rol {
         return 'Mago con alto daño y control';
       case Rol.soporteMotivacional:
         return 'Soporte que bufea al equipo';
+    }
+  }
+
+  static Rol fromString(String value) {
+    switch (value.toLowerCase()) {
+      case 'guardian':
+      case 'guardián':
+      case 'guardiandelenfoque':
+      case 'guardian_del_enfoque':
+        return Rol.guardianDelEnfoque;
+      case 'especialista':
+      case 'especialistaacademico':
+      case 'especialista_academico':
+        return Rol.especialistaAcademico;
+      case 'soporte':
+      case 'soportemotivacional':
+      case 'soporte_motivacional':
+        return Rol.soporteMotivacional;
+      default:
+        return Rol.guardianDelEnfoque;
     }
   }
 }
