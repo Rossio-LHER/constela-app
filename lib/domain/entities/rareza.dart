@@ -1,10 +1,11 @@
 /// Enumeración de rarezas de skins en CONSTELA
 enum Rareza {
-  basico,      // Sin bonificadores (100% oro/exp)
-  epico,       // +15% oro/exp
-  collector;   // +25% oro/exp, exclusiva
+  basico,
+  epico,
+  collector,
+}
 
-  /// Retorna el nombre en español
+extension RarezaExtension on Rareza {
   String get nombreEspanol {
     switch (this) {
       case Rareza.basico:
@@ -16,7 +17,6 @@ enum Rareza {
     }
   }
 
-  /// Retorna el multiplicador de oro/exp
   double get multiplicador {
     switch (this) {
       case Rareza.basico:
@@ -25,6 +25,21 @@ enum Rareza {
         return 1.15;
       case Rareza.collector:
         return 1.25;
+    }
+  }
+
+  static Rareza fromString(String value) {
+    switch (value.toLowerCase()) {
+      case 'basico':
+      case 'básico':
+        return Rareza.basico;
+      case 'epico':
+      case 'épico':
+        return Rareza.epico;
+      case 'collector':
+        return Rareza.collector;
+      default:
+        return Rareza.basico;
     }
   }
 }
