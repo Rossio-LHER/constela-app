@@ -1,10 +1,11 @@
 /// Enumeración de razas disponibles en CONSTELA
 enum Raza {
-  astrales,    // +15 Poder de Resolución
-  celidos,     // +15 Resistencia a Distracción
-  nebulanos;   // +15 Velocidad de Enfoque
+  astrales,
+  celidos,
+  nebulanos,
+}
 
-  /// Retorna el nombre en español
+extension RazaExtension on Raza {
   String get nombreEspanol {
     switch (this) {
       case Raza.astrales:
@@ -16,7 +17,6 @@ enum Raza {
     }
   }
 
-  /// Retorna la descripción del bonificador
   String get descripcionBonus {
     switch (this) {
       case Raza.astrales:
@@ -25,6 +25,22 @@ enum Raza {
         return '+15 Resistencia a Distracción';
       case Raza.nebulanos:
         return '+15 Velocidad de Enfoque';
+    }
+  }
+
+  int get bonificador => 15;
+
+  static Raza fromString(String value) {
+    switch (value.toLowerCase()) {
+      case 'astrales':
+        return Raza.astrales;
+      case 'celidos':
+      case 'célidos':
+        return Raza.celidos;
+      case 'nebulanos':
+        return Raza.nebulanos;
+      default:
+        return Raza.astrales;
     }
   }
 }
