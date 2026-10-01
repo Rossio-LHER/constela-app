@@ -1,0 +1,83 @@
+name: constela_app
+description: Plataforma gamificada de estudio con Pomodoro y sistema de héroes competitivo inspirado en Mobile Legends.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  flutter_riverpod: ^2.4.0
+  riverpod_annotation: ^2.3.0
+  
+  # Persistencia Local
+  shared_preferences: ^2.2.0
+  
+  # Serialización JSON
+  json_serializable: ^6.7.0
+  json_annotation: ^4.8.0
+  
+  # UI y Responsividad
+  responsive_framework: ^1.1.0
+  
+  # Utilidades
+  uuid: ^4.0.0
+  intl: ^0.19.0
+  
+  # Animaciones
+  flutter_animate: ^4.2.0
+  
+  # Cupertino Icons
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Linter
+  flutter_lints: ^3.0.0
+  
+  # Build Runner para JSON serialization
+  build_runner: ^2.4.0
+  
+  # Code generation
+  riverpod_generator: ^2.3.0
+
+flutter:
+  uses-material-design: true
+  
+  # Assets
+  assets:
+    - assets/
+    - assets/heroes/
+    - assets/heroes/astrales/
+    - assets/heroes/astrales/masculino/basico/
+    - assets/heroes/astrales/masculino/epico/
+    - assets/heroes/astrales/masculino/collector/
+    - assets/heroes/astrales/femenino/basico/
+    - assets/heroes/astrales/femenino/epico/
+    - assets/heroes/astrales/femenino/collector/
+    - assets/heroes/celidos/
+    - assets/heroes/celidos/masculino/basico/
+    - assets/heroes/celidos/masculino/epico/
+    - assets/heroes/celidos/masculino/collector/
+    - assets/heroes/celidos/femenino/basico/
+    - assets/heroes/celidos/femenino/epico/
+    - assets/heroes/celidos/femenino/collector/
+    - assets/heroes/nebulanos/
+    - assets/heroes/nebulanos/masculino/basico/
+    - assets/heroes/nebulanos/masculino/epico/
+    - assets/heroes/nebulanos/masculino/collector/
+    - assets/heroes/nebulanos/femenino/basico/
+    - assets/heroes/nebulanos/femenino/epico/
+    - assets/heroes/nebulanos/femenino/collector/
+    - assets/vfx/
+    - assets/ui/
+    - assets/ui/icons/
+    - assets/ui/backgrounds/
